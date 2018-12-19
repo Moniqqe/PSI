@@ -4,7 +4,7 @@ from sklearn import tree
 
 
 def decision_tree():
-    df = pd.read_csv("Pokemontree.csv", sep=';')
+    df = pd.read_csv("Pokemontree.csv")
     # print(df)
     inputs = df.drop('Over', axis='columns')
     target = df['Over']
@@ -14,10 +14,10 @@ def decision_tree():
     inputs['type1_new'] = le_type1.fit_transform(inputs['Type_1'])
     inputs['type2_new'] = le_type2.fit_transform(inputs['Type_2'])
     inputs_n = inputs.drop(['Type_1', 'Type_2'], axis='columns')
-    model = tree.DecisionTreeClassifier()
-    model.fit(inputs_n, target)
-    model.score(inputs_n, target)
-    model.predict([3, 3]) #grass, poison
+    # model = tree.DecisionTreeClassifier()
+    # model.fit(inputs_n, target)
+    # model.score(inputs_n, target)
+    # model.predict([3, 3]) #grass, poison
 
 
 def main():
