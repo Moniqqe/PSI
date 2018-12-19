@@ -11,11 +11,11 @@ def decision_tree():
     # print(target)
     le_type1 = LabelEncoder()
     le_type2 = LabelEncoder()
-    inputs['type1_new'] = le_type1.fit_transform(inputs['Type_1'])
-    inputs['type2_new'] = le_type2.fit_transform(inputs['Type_2'])
-    inputs_n = inputs.drop(['Type_1', 'Type_2'], axis='columns')
-    # model = tree.DecisionTreeClassifier()
-    # model.fit(inputs_n, target)
+    inputs['type1_new'] = le_type1.fit_transform(inputs['Type1'])
+    inputs['type2_new'] = le_type2.fit_transform(inputs['Type2'])
+    inputs_n = inputs.drop(['Type1', 'Type2'], axis='columns')
+    model = tree.DecisionTreeClassifier()
+    model.fit(inputs_n, target)
     # model.score(inputs_n, target)
     # model.predict([3, 3]) #grass, poison
 
